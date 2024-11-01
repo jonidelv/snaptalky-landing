@@ -1,3 +1,3 @@
-#Snaptalky Landing
+# Snaptalky Landing
 
-### This is teh landing page with store links for snaptalky
+### This is the landing page with store links for Snaptalky
