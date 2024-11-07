@@ -1,0 +1,290 @@
+html, body {
+  height: 100%;
+  background-color: #f6f6f6;
+  color: #494949;
+}
+
+header {
+  max-width: 1400px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  height: 80px;
+}
+
+header .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .logo-container .image-logo {
+  height: 30px;
+  margin-right: 5px;
+}
+
+header .logo-container .logo-text {
+  font-size: 25px;
+  color: #38BDF8;
+}
+
+header .contact-container a {
+  width: 82px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #d0d0d0;
+  color: #676767;
+  cursor: pointer;
+}
+
+header .contact-container a:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+  box-shadow: 0 1px 3px 0 #c7c7c7;
+}
+
+footer {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 14px;
+}
+
+footer span {
+  font-size: 14px;
+  color: grey;
+}
+
+main {
+  min-height: calc(100vh - 35px - 80px);
+  padding-top: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+}
+
+main .grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* Define number of columns */
+  grid-template-rows: repeat(6, 1fr); /* Define number of rows */
+  gap: 1px; /* Space between grid items */
+  width: 100%;
+  border-left: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
+  min-height: 250px;
+  max-width: 1080px;
+  height: 550px;
+  position: relative;
+}
+
+main .grid::before {
+  content: "";
+  display: block;
+  grid-column: 1 / -1; /* Spans all columns */
+  grid-row: 1 / -1; /* Spans all rows */
+  background-image:
+          repeating-linear-gradient(0deg, transparent, transparent calc(100% / 6 - 1px), #d7d7d7 calc(100% / 6)),
+          repeating-linear-gradient(90deg, transparent, transparent calc(100% / 10 - 1px), #d7d7d7 calc(100% / 10));
+  width: 100%;
+  height: 100%;
+}
+
+main .grid .top-plus {
+  position: absolute;
+  font-weight: 100;
+  font-size: 20px
+}
+
+main .grid .plus {
+  position: absolute;
+  font-weight: 100;
+  font-size: 36px;
+  color: #ababab;
+}
+
+main .grid .top-plus {
+  top: -20px;
+  left: -10px;
+}
+
+main .grid .bottom-plus {
+  bottom: -17px;
+  right: -10px;
+}
+
+/*White bubble*/
+main .grid .white-bubble {
+  padding: 30px 40px;
+  background-color: #38BDF8;
+  border-radius: 50px;
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  top: 90px;
+  right: 50px;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+main .grid .white-bubble .bubble-inner {
+  position: relative;
+  z-index: 10;
+}
+
+main .grid .white-bubble .white-bubble-pointer {
+  position: absolute;
+  bottom: -29px;
+  right: -43px;
+  fill: #38BDF8;
+  z-index: 1;
+}
+
+.typed-cursor {
+  color: #68a3c0;
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 30px;
+  position: relative;
+  z-index: 9;
+}
+
+/*Black bubble*/
+main .grid .black-bubble {
+  padding: 45px 50px;
+  background-color: #fff;
+  border-radius: 50px;
+  font-size: 20px;
+  position: absolute;
+  top: 272px;
+  left: 50px;
+  color: #fff;
+}
+
+main .grid .black-bubble .black-bubble-pointer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  fill: #fff;
+  z-index: 1;
+}
+
+main .grid .black-bubble .text-part {
+  position: relative;
+  z-index: 9;
+  display: flex;
+  color: #777777;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+main .grid .black-bubble .text-part .text-2 {
+  color: #000 !important;
+  font-weight: 500 !important;
+}
+
+main .grid .black-bubble .bubble-inner {
+  display: flex;
+}
+
+main .grid .black-bubble .bubble-inner .text-part {
+  flex: 1;
+  max-width: 450px;
+}
+
+main .grid .black-bubble .bubble-inner .buttons-part {
+  display: flex;
+  margin-left: 10px;
+}
+
+/*store buttons*/
+
+main .grid .black-bubble .bubble-inner .buttons-part .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .grid .black-bubble .bubble-inner .button.button-store {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .grid .black-bubble .bubble-inner .button-store .button-label {
+  padding-left: 6px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: center;
+}
+
+main .grid .black-bubble .bubble-inner .button-store .button-label .button-small-label {
+  font-size: 11px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+main .grid .black-bubble .bubble-inner .button-store .button-label .button-big-label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/*ios*/
+main .grid .black-bubble .bubble-inner .button.ios {
+  background-color: #fff;
+  color: #333;
+  margin-right: 15px;
+  border: 1px solid #000;
+}
+
+main .grid .black-bubble .bubble-inner .button.ios:hover {
+  box-shadow: 0 2px 6px 0 #c7c7c7;
+}
+
+main .grid .black-bubble .bubble-inner .button.ios .button-logo {
+  fill: #333;
+}
+
+main .grid .black-bubble .bubble-inner .button.ios .button-label .button-small-label {
+  color: #000;
+}
+
+main .grid .black-bubble .bubble-inner .button.ios .button-label .button-big-label {
+  color: #000;
+}
+
+/*Android*/
+
+main .grid .black-bubble .bubble-inner .button.android {
+  background-color: #000;
+  color: #fff;
+  padding: 9px 13px;
+}
+
+main .grid .black-bubble .bubble-inner .button.android:hover {
+  box-shadow: 0 2px 6px 0 #5e5e5e;
+}
+
+main .grid .black-bubble .bubble-inner .button.android.button-label .button-small-label {
+  color: #fff;
+}
+
+main .grid .black-bubble .bubble-inner .button.android.button-label .button-big-label {
+  color: #fff;
+}
