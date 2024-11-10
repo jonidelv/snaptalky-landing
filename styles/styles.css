@@ -122,7 +122,7 @@ main .grid .bottom-plus {
 }
 
 /*White bubble*/
-main .grid .white-bubble {
+main .grid .main-bubble {
   padding: 30px 40px;
   background-color: #38BDF8;
   border-radius: 50px;
@@ -135,12 +135,12 @@ main .grid .white-bubble {
   letter-spacing: -0.03em;
 }
 
-main .grid .white-bubble .bubble-inner {
+main .grid .main-bubble .bubble-inner {
   position: relative;
   z-index: 10;
 }
 
-main .grid .white-bubble .white-bubble-pointer {
+main .grid .main-bubble .main-bubble-pointer {
   position: absolute;
   bottom: -29px;
   right: -43px;
@@ -158,7 +158,7 @@ main .grid .white-bubble .white-bubble-pointer {
 }
 
 /*Black bubble*/
-main .grid .black-bubble {
+main .grid .secondary-bubble {
   padding: 45px 50px;
   background-color: #fff;
   border-radius: 50px;
@@ -169,7 +169,7 @@ main .grid .black-bubble {
   color: #fff;
 }
 
-main .grid .black-bubble .black-bubble-pointer {
+main .grid .secondary-bubble .secondary-bubble-pointer {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -177,7 +177,7 @@ main .grid .black-bubble .black-bubble-pointer {
   z-index: 1;
 }
 
-main .grid .black-bubble .text-part {
+main .grid .secondary-bubble .text-part {
   position: relative;
   z-index: 9;
   display: flex;
@@ -186,34 +186,34 @@ main .grid .black-bubble .text-part {
   line-height: 1.2;
 }
 
-main .grid .black-bubble .text-part .text-2 {
+main .grid .secondary-bubble .text-part .text-2 {
   color: #000 !important;
   font-weight: 500 !important;
 }
 
-main .grid .black-bubble .bubble-inner {
+main .grid .secondary-bubble .bubble-inner {
   display: flex;
 }
 
-main .grid .black-bubble .bubble-inner .text-part {
+main .grid .secondary-bubble .bubble-inner .text-part {
   flex: 1;
   max-width: 450px;
 }
 
-main .grid .black-bubble .bubble-inner .buttons-part {
+main .grid .secondary-bubble .bubble-inner .buttons-part {
   display: flex;
   margin-left: 10px;
 }
 
 /*store buttons*/
 
-main .grid .black-bubble .bubble-inner .buttons-part .button-container {
+main .grid .secondary-bubble .bubble-inner .buttons-part .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-main .grid .black-bubble .bubble-inner .button.button-store {
+main .grid .secondary-bubble .bubble-inner .button.button-store {
   cursor: pointer;
   padding: 8px 12px;
   border-radius: 10px;
@@ -224,7 +224,7 @@ main .grid .black-bubble .bubble-inner .button.button-store {
   align-items: center;
 }
 
-main .grid .black-bubble .bubble-inner .button-store .button-label {
+main .grid .secondary-bubble .bubble-inner .button-store .button-label {
   padding-left: 6px;
   text-align: left;
   display: flex;
@@ -233,58 +233,58 @@ main .grid .black-bubble .bubble-inner .button-store .button-label {
   justify-content: center;
 }
 
-main .grid .black-bubble .bubble-inner .button-store .button-label .button-small-label {
+main .grid .secondary-bubble .bubble-inner .button-store .button-label .button-small-label {
   font-size: 11px;
   display: inline-block;
   font-weight: 500;
 }
 
-main .grid .black-bubble .bubble-inner .button-store .button-label .button-big-label {
+main .grid .secondary-bubble .bubble-inner .button-store .button-label .button-big-label {
   font-size: 15px;
   font-weight: 600;
   margin-top: 2px;
 }
 
 /*ios*/
-main .grid .black-bubble .bubble-inner .button.ios {
+main .grid .secondary-bubble .bubble-inner .button.ios {
   background-color: #fff;
   color: #333;
   margin-right: 15px;
   border: 1px solid #000;
 }
 
-main .grid .black-bubble .bubble-inner .button.ios:hover {
+main .grid .secondary-bubble .bubble-inner .button.ios:hover {
   box-shadow: 0 2px 6px 0 #c7c7c7;
 }
 
-main .grid .black-bubble .bubble-inner .button.ios .button-logo {
+main .grid .secondary-bubble .bubble-inner .button.ios .button-logo {
   fill: #333;
 }
 
-main .grid .black-bubble .bubble-inner .button.ios .button-label .button-small-label {
+main .grid .secondary-bubble .bubble-inner .button.ios .button-label .button-small-label {
   color: #000;
 }
 
-main .grid .black-bubble .bubble-inner .button.ios .button-label .button-big-label {
+main .grid .secondary-bubble .bubble-inner .button.ios .button-label .button-big-label {
   color: #000;
 }
 
 /*Android*/
 
-main .grid .black-bubble .bubble-inner .button.android {
+main .grid .secondary-bubble .bubble-inner .button.android {
   background-color: #000;
   color: #fff;
   padding: 9px 13px;
 }
 
-main .grid .black-bubble .bubble-inner .button.android:hover {
+main .grid .secondary-bubble .bubble-inner .button.android:hover {
   box-shadow: 0 2px 6px 0 #5e5e5e;
 }
 
-main .grid .black-bubble .bubble-inner .button.android.button-label .button-small-label {
+main .grid .secondary-bubble .bubble-inner .button.android.button-label .button-small-label {
   color: #fff;
 }
 
-main .grid .black-bubble .bubble-inner .button.android.button-label .button-big-label {
+main .grid .secondary-bubble .bubble-inner .button.android.button-label .button-big-label {
   color: #fff;
 }
