@@ -88,6 +88,18 @@
     font-size: 17px;
     margin-bottom: 15px;
   }
+
+  .phone-showcase .phone-showcase-section-title {
+    font-size: 23px;
+  }
+
+  .phone-showcase .phone-showcase-section-title {
+    font-size: 23px;
+  }
+
+  .phone-showcase .phone-showcase-section-description {
+    font-size: 19px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -133,6 +145,15 @@
   main .grid .secondary-bubble .text-part {
     margin-bottom: 20px;
   }
+
+  .phone-showcase .phone-showcase-section-title {
+    font-size: 21px;
+  }
+
+  .phone-showcase .phone-showcase-section-description {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
 }
 
 @media (max-width: 370px) {
@@ -162,5 +183,14 @@
 
   main .grid .secondary-bubble .text-part {
     font-size: 16px;
+  }
+
+  .phone-showcase .phone-showcase-section-title {
+    font-size: 20px;
+  }
+
+  .phone-showcase .phone-showcase-section-description {
+    font-size: 17px;
+    margin-bottom: 50px;
   }
 }

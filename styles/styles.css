@@ -55,6 +55,7 @@ footer {
   justify-content: center;
   flex-direction: row;
   font-size: 14px;
+  margin-top: 60px;
 }
 
 footer span {
@@ -287,4 +288,230 @@ main .grid .secondary-bubble .bubble-inner .button.android.button-label .button-
 
 main .grid .secondary-bubble .bubble-inner .button.android.button-label .button-big-label {
   color: #fff;
+}
+
+.phone-showcase .phone-showcase-section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.phone-showcase .phone-showcase-section-title-container {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 0 15px;
+}
+
+.phone-showcase .phone-showcase-section-title {
+  font-size: 25px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 30px;
+  margin-top: -10px;
+}
+
+.phone-showcase .phone-showcase-section-description {
+  font-size: 21px;
+  color: #616a77;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+  line-height: 1.3;
+}
+
+/* Phone mockup */
+.phone-showcase .phone-showcase-phone-container {
+  position: relative;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.phone-showcase .phone-showcase-phone-frame {
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.phone-showcase .phone-showcase-phone-outer {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  border-radius: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.phone-showcase .phone-showcase-phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 33.333%;
+  height: 28px;
+  background-color: #000;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.phone-showcase .phone-showcase-phone-screen {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+  background-color: #fff;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.phone-showcase .phone-showcase-phone-status-bar {
+  height: 24px;
+  width: 100%;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.phone-showcase .phone-showcase-status-indicator-left {
+  width: 48px;
+  height: 8px;
+  background-color: #d1d5db;
+  border-radius: 9999px;
+}
+
+.phone-showcase .phone-showcase-status-indicator-right {
+  width: 24px;
+  height: 8px;
+  background-color: #d1d5db;
+  border-radius: 9999px;
+}
+
+/* Screenshots slider */
+.phone-showcase .phone-showcase-screenshots-slider {
+  position: relative;
+  z-index: 0;
+  width: 264px;
+  height: 570px;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  /*border: 1px solid #d1d5db;*/
+}
+
+.phone-showcase .phone-showcase-slider-container {
+  position: absolute;
+  inset: 0;
+  transition: transform 500ms ease-in-out;
+}
+
+.phone-showcase .phone-showcase-screenshot {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.phone-showcase .phone-showcase-screenshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Navigation buttons */
+.phone-showcase .phone-showcase-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.phone-showcase .phone-showcase-nav-button:hover {
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.phone-showcase .phone-showcase-nav-button:hover svg {
+  scale: 1.1;
+}
+
+.phone-showcase .phone-showcase-nav-button-prev {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.phone-showcase .phone-showcase-nav-button-next {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.phone-showcase .phone-showcase-nav-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.phone-showcase .phone-showcase-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Caption */
+.phone-showcase .phone-showcase-caption {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.phone-showcase .phone-showcase-caption-title {
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.phone-showcase .phone-showcase-caption-description {
+  color: #4b5563;
+  margin-top: 0.5rem;
+}
+
+/* Dots indicator */
+.phone-showcase .phone-showcase-dots-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.phone-showcase .phone-showcase-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background-color: #d1d5db;
+  margin: 0 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.phone-showcase .phone-showcase-dot:hover {
+  background-color: #9ca3af;
+}
+
+.phone-showcase .phone-showcase-dot.active {
+  background-color: #38bdf8;
+  width: 24px;
 }
