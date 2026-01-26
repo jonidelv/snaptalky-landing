@@ -5,29 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
     dateElement.textContent = new Date().getFullYear();
   }
 
-  // Initialize Typed.js
-  const typedOptions = {
-    strings: ["Elevate your conversations with smart replies."],
-    typeSpeed: 30,
-    backSpeed: 20,
-    loop: true,
-    backDelay: 3000,
-  };
-  new Typed("#typing-text", typedOptions);
-
   // Slider functionality
   const sliderContainer = document.getElementById("slider-container");
   const prevButton = document.getElementById("prev-button");
   const nextButton = document.getElementById("next-button");
-  const sliderWrapper = document.querySelector(".phone-showcase-screenshots-slider");
-  // Dots for indicating current slide (ensure there are exactly 5 dots in your HTML)
-  const dots = document.querySelectorAll(".phone-showcase-dot");
+  const sliderWrapper = document.querySelector(".showcase-slider");
+  const dots = document.querySelectorAll(".showcase-dot");
 
   // Use the number of dots as the number of slides
   const slidesCount = dots.length;
 
   let currentIndex = 0;
   let isAnimating = false;
+  let autoSlideInterval;
 
   // Touch/swipe variables
   let touchStartX = 0;
@@ -37,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const swipeThreshold = 50;
 
   function updateSlider() {
-    // Horizontal slide (left/right) instead of vertical
+    if (!sliderContainer) return;
     sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
 
     // Update dots indicator
@@ -51,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isAnimating = true;
     currentIndex = (currentIndex + 1) % slidesCount;
     updateSlider();
-    setTimeout(() => isAnimating = false, 500);
+    setTimeout(() => isAnimating = false, 400);
   }
 
   function prevSlide() {
@@ -59,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isAnimating = true;
     currentIndex = (currentIndex - 1 + slidesCount) % slidesCount;
     updateSlider();
-    setTimeout(() => isAnimating = false, 500);
+    setTimeout(() => isAnimating = false, 400);
   }
 
   function goToSlide(index) {
@@ -67,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isAnimating = true;
     currentIndex = index;
     updateSlider();
-    setTimeout(() => isAnimating = false, 500);
+    setTimeout(() => isAnimating = false, 400);
   }
 
   function handleSwipe() {
@@ -77,19 +67,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Only handle horizontal swipes (ignore if vertical movement is greater)
     if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
       if (diffX > 0) {
-        // Swiped left -> next slide
         nextSlide();
       } else {
-        // Swiped right -> previous slide
         prevSlide();
       }
     }
   }
 
+  function resetAutoSlide() {
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+    }
+    autoSlideInterval = setInterval(nextSlide, 5000);
+  }
+
   // Attach event listeners for navigation arrows
   if (prevButton && nextButton) {
-    prevButton.addEventListener("click", prevSlide);
-    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", () => {
+      prevSlide();
+      resetAutoSlide();
+    });
+    nextButton.addEventListener("click", () => {
+      nextSlide();
+      resetAutoSlide();
+    });
   }
 
   // Touch event listeners for swipe support
@@ -103,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       touchEndX = e.changedTouches[0].screenX;
       touchEndY = e.changedTouches[0].screenY;
       handleSwipe();
+      resetAutoSlide();
     }, { passive: true });
 
     // Mouse drag support for desktop
@@ -126,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           prevSlide();
         }
+        resetAutoSlide();
       }
     });
 
@@ -142,12 +145,32 @@ document.addEventListener("DOMContentLoaded", () => {
     dot.addEventListener("click", function () {
       const index = parseInt(this.getAttribute("data-index"), 10);
       goToSlide(index);
+      resetAutoSlide();
     });
   });
 
-  // Auto-advance slides every 5 seconds
-  setInterval(nextSlide, 5000);
+  // Start auto-advance slides
+  if (slidesCount > 0) {
+    autoSlideInterval = setInterval(nextSlide, 5000);
+    updateSlider();
+  }
 
-  // Initialize slider position
-  updateSlider();
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const headerHeight = 72;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 });
