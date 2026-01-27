@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const sliderContainer = document.getElementById("slider-container");
   const prevButton = document.getElementById("prev-button");
   const nextButton = document.getElementById("next-button");
-  const sliderWrapper = document.querySelector(".showcase-slider");
-  const dots = document.querySelectorAll(".showcase-dot");
+  const sliderWrapper = document.querySelector(".phone-slider");
+  const dots = document.querySelectorAll(".phone-dot");
 
   // Use the number of dots as the number of slides
   const slidesCount = dots.length;
@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateSlider() {
     if (!sliderContainer) return;
-    sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    // Each slide is 25% of the track (400% / 4 slides)
+    sliderContainer.style.transform = `translateX(-${currentIndex * 25}%)`;
 
     // Update dots indicator
     dots.forEach((dot, index) => {
